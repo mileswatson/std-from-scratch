@@ -1,3 +1,5 @@
+pub mod cell;
+
 #[cfg(test)]
 mod tests {
     #[test]
