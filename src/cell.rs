@@ -12,7 +12,8 @@ impl<T> Cell<T> {
     }
 
     pub fn set(&self, val: T) {
-        // SAFETY: since Cell can't be shared across threads, there are no concurrent readers - therefore, we have exclusive mutable access.
+        // SAFETY: since Cell can't be shared across threads, there are no concurrent readers -
+        // therefore, we have exclusive mutable access.
         unsafe {
             let v = self.value.get();
             *v = val;
