@@ -41,3 +41,18 @@ impl<T: Copy> Cell<T> {
         }
     }
 }
+
+#[cfg(test)]
+mod test {
+    use super::Cell;
+
+    #[test]
+    fn set_get() {
+        let c = &Cell::new(5);
+        assert!(c.get() == 5);
+        c.set(31);
+        assert!(c.get() == 31);
+        c.set(35);
+        assert!(c.get() == 35);
+    }
+}
